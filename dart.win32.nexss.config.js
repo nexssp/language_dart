@@ -10,7 +10,7 @@ languageConfig.checkSyntax = "";
 languageConfig.interactiveShell = "dart";
 languageConfig.builders = {};
 languageConfig.compilers = {
-  node: {
+  dart: {
     install:
       "scoop bucket add java && scoop install openjdk dart && scoop reset dart", // scoop reset dart ? didn't work from standard install
     command: "dart",
