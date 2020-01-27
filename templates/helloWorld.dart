@@ -5,7 +5,7 @@ import 'dart:io';
 import 'dart:convert';
 
 void main() {
-  var NexssStdin = stdin.readLineSync();
+  var NexssStdin = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
   var NexssStdout = jsonDecode(NexssStdin);
 
   NexssStdout['HelloFromDart'] = Platform.version;

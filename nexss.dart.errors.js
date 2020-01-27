@@ -1,4 +1,4 @@
 module.exports = {
-  "Error: Getter not found: '(.*?)'":
-    "Variable '<package>' has not been found. var <package> = \"\"; ?"
+  "Error: Getter not found: '(?<found1>.*?)'":
+    "Variable '<found1>' has not been found. var <found1> = \"\"; ?"
 };
