@@ -3,6 +3,9 @@ languageConfig.title = "Dart";
 languageConfig.description =
   "Dart is a client-optimized language for fast apps on any platform.";
 languageConfig.url = "https://dart.dev/";
+languageConfig.founders = ["Google"];
+languageConfig.developers = ["Google"];
+languageConfig.years = ["2011"];
 languageConfig.extensions = [".dart"];
 languageConfig.executeCommandLine = "dart";
 languageConfig.printCommandLine = ""; //no console.log() needed to display result eg node -p "4+6"
