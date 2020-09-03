@@ -1,4 +1,7 @@
-let languageConfig = Object.assign({}, require("../config.win32"));
+let languageConfig = Object.assign(
+  {},
+  require(`../config.${process.platform}`)
+);
 languageConfig.title = "Dart";
 languageConfig.description =
   "Dart is a client-optimized language for fast apps on any platform.";
@@ -18,8 +21,8 @@ languageConfig.compilers = {
       "scoop bucket add java && scoop install openjdk dart && scoop reset dart", // scoop reset dart ? didn't work from standard install
     command: "dart",
     args: "<file>",
-    help: ``
-  }
+    help: ``,
+  },
 };
 languageConfig.errors = require("./nexss.dart.errors");
 languageConfig.languagePackageManagers = {
@@ -46,8 +49,8 @@ languageConfig.languagePackageManagers = {
     },
     // if command not found in specification
     // run directly on package manager
-    else: "pub"
-  }
+    else: "pub",
+  },
 };
 
 module.exports = languageConfig;
