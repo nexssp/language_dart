@@ -1,7 +1,6 @@
 let languageConfig = Object.assign({}, require("./dart.win32.nexss.config"));
 const installDartScript = `${__dirname}/install/setupChannel.linux.sh`;
-const os = require(`${process.env.NEXSS_SRC_PATH}/node_modules/@nexssp/os/`);
-const sudo = os.sudo();
+const sudo = process.sudo;
 
 languageConfig.compilers = {
   //apt install -y apt-transport-https
@@ -16,16 +15,16 @@ ${sudo}apt install -y dart`,
   },
 };
 
-const distName = os.name();
+const distName = process.distro;
 languageConfig.dist = distName;
 
 // TODO: Later to cleanup this config file !!
 switch (distName) {
-  case os.distros.ARCH:
+  case process.distros.ARCH:
     languageConfig.compilers.dart.install = `${sudo}pacman -Sy --noconfirm dart`;
     break;
   default:
-    languageConfig.compilers.dart.install = os.replacePMByDistro(
+    languageConfig.compilers.dart.install = process.replacePMByDistro(
       languageConfig.compilers.dart.install
     );
     break;
